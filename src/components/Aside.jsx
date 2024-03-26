@@ -1,10 +1,16 @@
-import React from "react";
+import React from 'react';
 
-function Aside() {
+function Aside({dogs, arr}) {
+  console.log(dogs);
+  console.log(arr)
   return (
     <aside>
       <h3>Roster:</h3>
-      <ol></ol>
+      <ol>
+        {dogs.map((dog) => (
+          dog.present ? <li key={dog.name}>{dog.name}</li> : null
+        ))}
+      </ol>
     </aside>
   );
 }
